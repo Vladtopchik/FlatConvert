@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <title>FlatConvert</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap">
+    <link rel="stylesheet" href="{{ static('css/style.css') }}">
+    <link rel="icon" href="{{ static('images/logo.svg') }}" type="image/x-icon">
+    <style>
+        @font-face {
+            font-family: 'Icons';
+            src: url('{{ static("fonts/icons.woff2") }}') format('woff2');
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a class="logo" href="{{ url('home') }}">
+            {{ load_svg('logo.svg') }}
+            <b class="logo-text">FlatConvert</b>
+        </a>
+        <nav>
+            <div class="nav-item-container">
+                <span class="nav-item dropdown current">{{ _("Tools") }}</span>
+                <div class="dropdown-tool">
+                    <div class="dropdown-tool-item">
+                        <p class="dropdown-tool-title"><span class="icon">&#xe010;</span> {{ _("Convert Files") }}</p>
+                        {% include 'partials/file_type_dropdown.html' %}
+                    </div>
+                    <div class="dropdown-tool-item">
+                        <p class="dropdown-tool-title"><span class="icon">&#xe013;</span> {{ _("Multiconverter") }}</p>
+                        {% include 'partials/file_type_dropdown.html' %}
+                    </div>
+                    <div class="dropdown-tool-item">
+                        <p class="dropdown-tool-title"><span class="icon">&#xe009;</span> {{ _("Compress Files") }}</p>
+                        {% with compress=True %}
+                            {% include 'partials/file_type_dropdown.html' %}
+                        {% endwith %}
+                    </div>
+                    <div class="dropdown-tool-item">
+                        <p class="dropdown-tool-title"><span class="icon">&#xe012;</span> {{ _("Maker") }}</p>
+                        <ul class="dropdown-tool-list">
+                            <li data-icon="&#xe002;">{{ _("Gif Maker") }}</li>
+                            <li data-icon="&#xe002;">{{ _("Lottie Maker") }}</li>
+                        </ul>
+                        <p class="dropdown-tool-title"><span class="icon">&#xe008;</span> {{ _("Archive") }}</p>
+                        <ul class="dropdown-tool-list">
+                            <li data-icon="&#xe002;">{{ _("Create Archive") }}</li>
+                            <li data-icon="&#xe002;">{{ _("Extract Archive") }}</li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-tool-item dropdown-tool-large">
+                        <p class="dropdown-tool-title"><span class="icon">&#xe014;</span> {{ _("File Processing") }}</p>
+                        <div class="dropdown-tool-list-large">
+                            <ul class="dropdown-tool-list">
+                                <li data-icon="&#xe002;">{{ _("Resize Image") }}</li>
+                                <li data-icon="&#xe002;">{{ _("Crop Image") }}</li>
+                                <li data-icon="&#xe002;">{{ _("Resize Video") }}</li>
+                                <li data-icon="&#xe002;">{{ _("Crop Video") }}
+                                <li data-icon="&#xe002;">{{ _("Rotate Video") }}</li>
+                                <li data-icon="&#xe002;">{{ _("Flip Video") }}</li>
+                                <li data-icon="&#xe002;">{{ _("Trim Video") }}</li>
+                                <li data-icon="&#xe002;">{{ _("Loop Video") }}</li>
+                                <li data-icon="&#xe002;">{{ _("Split Video") }}</li>
+                                <li data-icon="&#xe002;">{{ _("Merge Videos") }}</li>
+                                <li data-icon="&#xe002;">{{ _("Reverse Video") }}</li>
+                                <li data-icon="&#xe002;">{{ _("Change Video Volume") }}</li>
+                            </ul>
+                            <ul class="dropdown-tool-list">
+                                <li data-icon="&#xe002;">{{ _("Change Video Speed") }}</li>
+                                <li data-icon="&#xe002;">{{ _("Trim Audio") }}</li>
+                                <li data-icon="&#xe002;">{{ _("Reverse Audio") }}</li>
+                                <li data-icon="&#xe002;">{{ _("Split Audio") }}</li>
+                                <li data-icon="&#xe002;">{{ _("Merge Audio") }}</li>
+                                <li data-icon="&#xe002;">{{ _("Overlay Audio") }}</li>
+                                <li data-icon="&#xe002;">{{ _("Change Audio Volume") }}</li>
+                                <li data-icon="&#xe002;">{{ _("Change Audio Speed") }}</li>
+                                <li data-icon="&#xe002;">{{ _("Change Audio Pitch") }}</li>
+                                <li data-icon="&#xe002;">{{ _("Audio Equalizer") }}</li>
+                                <li data-icon="&#xe002;">{{ _("Animation Editor") }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item-container">
+                <span class="nav-item dropdown">{{ _("About us") }}</span>
+                <ul class="dropdown-list">
+                    <li>{{ _("Capabilities") }}</li>
+                    <li>{{ _("How it works") }}</li>
+                </ul>
+            </div>
+            <div class="nav-item-container">
+                <a href="#" class="nav-item">{{ _("Pricing") }}</a>
+            </div>
+        </nav>
+    </header>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

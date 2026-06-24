@@ -1,0 +1,13 @@
+<ul class="dropdown-tool-list">
+    <li data-icon="&#xe020;">{{ _("Image") }}</li>
+    <li data-icon="&#xe022;">{{ _("Video") }}</li>
+    <li data-icon="&#xe015;">{{ _("Animation") }}</li>
+    <li data-icon="&#xe017;">{{ _("Audio") }}</li>
+    {% if not compress %}
+        <li data-icon="&#xe018;">{{ _("Document") }}</li>
+        <li data-icon="&#xe019;">{{ _("Font") }}</li>
+        <li data-icon="&#xe016;">{{ _("Archive") }}</li>
+        <li data-icon="&#xe021;">{{ _("Presentation") }}</li>
+        <li data-icon="&#xe023;">{{ _("Spreadsheet") }}</li>
+    {% endif %}
+</ul>
