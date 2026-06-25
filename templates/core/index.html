@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ css('core/index.css') }}">
+{% endblock %}
+
+{% block main %}
+    <section class="about">
+        <div class="about-service"><span class="icon">&#xe001;</span><span>{{ _("Service trusted by thousands") }}</span></div>
+        <div class="about-service-sections">
+            <div class="about-first-section">
+                <p class="about-title">{{ _("We make working with files easy for everyone") }}</p>
+                <p class="about-description">{{ _("FlatConvert is a powerful product designed to make file processing
+                    more accessible and efficient for everyone. Our service combines speed and simplicity with
+                    a deep commitment to user privacy, offering a comprehensive suite of tools for your daily
+                    digital tasks. With our platform, you can seamlessly convert files, handle large groups in
+                    batches, and perform essential edits directly in your browser. Beyond basic tasks, we also
+                    empower you to create organized archives and make animations, providing a
+                    reliable environment for all your needs.") }}</p>
+            </div>
+            <div class="about-second-section">
+                <div class="about-second-section-info">
+                    <div class="about-second-section-info-icon">&#xe003;</div>
+                    <div class="about-second-section-info-content">
+                        <h6 class="about-second-section-info-content-title">{{ _("Our goal") }}</h6>
+                        <p class="about-second-section-info-content-description">
+                            {{ _("Making file processing more accessible")}}
+                        </p>
+                    </div>
+                </div>
+                <div class="about-second-section-info">
+                    <div class="about-second-section-info-icon">&#xe002;</div>
+                    <div class="about-second-section-info-content">
+                        <h6 class="about-second-section-info-content-title">{{ _("Privacy") }}</h6>
+                        <p class="about-second-section-info-content-description">
+                            {{ _("File encryption, and no copies of your data")}}
+                        </p>
+                    </div>
+                </div>
+                <div class="about-second-section-info">
+                    <div class="about-second-section-info-icon">&#xe005;</div>
+                    <div class="about-second-section-info-content">
+                        <h6 class="about-second-section-info-content-title">{{ _("Community") }}</h6>
+                        <p class="about-second-section-info-content-description">
+                            {{ _(" Over 50 000 users")}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="why-us">
+        
+    </section>
+{% endblock %}

@@ -10,6 +10,7 @@ def environment(**options):
 
     env.globals.update({
         "static": static,
+        "css": lambda x: static(f"css/{x}"),
         "url": reverse,
         "load_svg": load_svg,
         "_": gettext

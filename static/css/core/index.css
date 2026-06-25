@@ -1,0 +1,92 @@
+.about {
+    padding: 0.5rem;
+}
+
+.about-service {
+    position: relative;
+    width: fit-content;
+    color: var(--secondary-text-color);
+    background: var(--primary-color-400);
+    padding: 0.4rem;
+    border-radius: 0.3rem;
+
+    .icon {
+        margin-inline: 0.5rem;
+    }
+}
+
+.about-title {
+    font-size: 3rem;
+    font-weight: 500;
+    margin-block: 1.2rem;
+}
+
+.about-description {
+    font-size: 1.3rem;
+    color: var(--text-color-800);
+    margin-block: 1.2rem;
+}
+
+.about-service-sections {
+    position: relative;
+    display: grid;
+    grid-template-columns: 0.6fr 0.4fr;
+    gap: 2rem;
+}
+
+.about-second-section {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: var(--text-color-300);
+    border: 0.1rem solid var(--text-color-500);
+    border-radius: 0.8rem;
+}
+
+.about-second-section-info {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    gap: 1rem;
+    padding: 0.3rem;
+}
+
+.about-second-section-info-icon {
+    position: relative;
+    display: flex;
+    font-family: "Icons", sans-serif;
+    aspect-ratio: 1/1;
+    border-radius: 0.8rem;
+    background: var(--secondary-color);
+    color: var(--primary-color-500);
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.about-second-section-info-content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    padding-block: 0.4rem;
+    gap: 0.3rem;
+}
+
+.about-second-section-info-content-title {
+    margin: 0;
+    font-size: clamp(0.95rem, 1.6vw, 2rem);
+}
+
+.about-second-section-info-content-description {
+    margin: 0;
+    font-size: clamp(0.8rem, 1vw, 1rem);
+}
+
+.why-us {
+    background: ;
+}
