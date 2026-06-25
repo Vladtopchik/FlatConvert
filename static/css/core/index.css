@@ -3,7 +3,36 @@ main > section {
 }
 
 .about {
+    position: relative;
     padding: 0.5rem 3rem;
+}
+
+.about-animation-container {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.about-animation {
+    position: relative;
+    width: auto;
+    height: 100%;
+    z-index: -1;
+    aspect-ratio: 1.13/1;
+}
+
+.about-animation > svg > g > g > g > g > g > g > g:nth-child(1):not(:only-child) {
+    display: none;
+}
+
+.about-animation path {
+    fill: var(--primary-color-400);
+    stroke: var(--primary-color-400);
 }
 
 .about-service {
@@ -32,17 +61,15 @@ main > section {
 }
 
 .about-service-sections {
-    position: relative;
     display: grid;
     grid-template-columns: 0.6fr 0.4fr;
     gap: 2rem;
 }
 
 .about-second-section {
-    position: relative;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
     gap: 0.5rem;
     padding: 1rem;
     background: var(--background-color-700);
@@ -51,7 +78,6 @@ main > section {
 }
 
 .about-second-section-info {
-    position: relative;
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: 1fr;
@@ -60,7 +86,6 @@ main > section {
 }
 
 .about-second-section-info-icon {
-    position: relative;
     display: flex;
     font-family: "Icons", sans-serif;
     aspect-ratio: 1/1;
@@ -73,7 +98,6 @@ main > section {
 }
 
 .about-second-section-info-content {
-    position: relative;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
@@ -94,7 +118,6 @@ main > section {
 .why-us {
     position: relative;
     background: var(--background-color-700);
-    height: 10rem;
     text-align: center;
     padding: 1rem;
 }

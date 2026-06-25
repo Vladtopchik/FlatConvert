@@ -48,7 +48,9 @@
                 </div>
             </div>
         </div>
-        <div class="about-animation"></div>
+        <div id="animation-container" class="about-animation-container">
+            <div id="animation-first-element" class="about-animation"></div>
+        </div>
     </section>
     <section class="why-us">
         <h1 class="why-us-title">Why us</h1>
@@ -60,7 +62,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
 
     <script>
-        const aboutAnimationPath = {{ static("animations/file-types-animation.json") }};
+        const aboutAnimationPath = {{ static("animations/file-types-animation.json") | tojson }};
     </script>
 
     <script src="{{ js('core/index.js') }}"></script>
