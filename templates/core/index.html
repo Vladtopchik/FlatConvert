@@ -48,8 +48,20 @@
                 </div>
             </div>
         </div>
+        <div class="about-animation"></div>
     </section>
     <section class="why-us">
-        
+        <h1 class="why-us-title">Why us</h1>
+        <p class="why-us-subtitle">Everything you need for convenient work with files, in one place</p>
     </section>
+{% endblock %}
+
+{% block script %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+
+    <script>
+        const aboutAnimationPath = {{ static("animations/file-types-animation.json") }};
+    </script>
+
+    <script src="{{ js('core/index.js') }}"></script>
 {% endblock %}

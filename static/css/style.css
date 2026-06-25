@@ -15,7 +15,7 @@
     --text-color-500: #707070;
     --text-color-300: #bdbdbd;
     --secondary-text-color: #e9ffcc;
-    --background-color: white;
+    --background-color-500: #ffffff;
 }
 
 :root[data-theme="dark"] {
@@ -31,11 +31,18 @@
     --text-color-300: #606060;
     --secondary-text-color: #c0dd97;
     --secondary-color: #eaf3de;
-    --background-color: #4e4e4e;
+    --background-color-500: #373737;
+    --background-color-600: #575757;
+    --background-color-700: #4c4c4c;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
 }
 
 body {
-    background: var(--background-color);
+    background: var(--background-color-500);
 }
 
 body, button, p, h1, h2, h3, h4, h5, h6 {

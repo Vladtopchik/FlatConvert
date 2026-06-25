@@ -1,5 +1,9 @@
+main > section {
+    margin-block: 2rem;
+}
+
 .about {
-    padding: 0.5rem;
+    padding: 0.5rem 3rem;
 }
 
 .about-service {
@@ -41,8 +45,8 @@
     grid-template-rows: 1fr 1fr 1fr;
     gap: 0.5rem;
     padding: 1rem;
-    background: var(--text-color-300);
-    border: 0.1rem solid var(--text-color-500);
+    background: var(--background-color-700);
+    border: 0.1rem solid var(--background-color-600);
     border-radius: 0.8rem;
 }
 
@@ -88,5 +92,9 @@
 }
 
 .why-us {
-    background: ;
+    position: relative;
+    background: var(--background-color-700);
+    height: 10rem;
+    text-align: center;
+    padding: 1rem;
 }
