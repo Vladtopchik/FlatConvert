@@ -238,7 +238,7 @@ nav {
     grid-template-rows: repeat(2, auto);
     pointer-events: none;
 
-    @media (min-width: 162rem) {
+    @media (min-width: 136rem) {
         translate: 0 0;
         left: 15rem;
     }

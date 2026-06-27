@@ -11,6 +11,8 @@ function createAnimation(container, animationData, startFrame=0) {
     });
 
     anim.goToAndPlay(startFrame, true);
+    anim.setSpeed(1);
+    anim.setSubframe(false);
 
     return anim;
 }
@@ -55,13 +57,19 @@ function createAnimationsToFit() {
 
     const containersToFit = maxContainersCount - containersCount;
 
-    if (containersToFit <= 0) return;
-
-    for (let i = 0; i < containersToFit; i++) {
-        const el = aboutAnimationFirstContainer.cloneNode(false);
-        aboutAnimationMainContainer.appendChild(el);
-        createAnimation(el, animation, initialAnimation.currentFrame);
+    if (containersToFit > 0) {
+        for (let i = 0; i < containersToFit; i++) {
+            const el = aboutAnimationFirstContainer.cloneNode(false);
+            aboutAnimationMainContainer.appendChild(el);
+            createAnimation(el, animation, initialAnimation.currentFrame);
+        }
+    } else {
+        for (let i = 0; i > containersToFit; i--) {
+            aboutAnimationMainContainer.lastElementChild.remove();
+        }
     }
+
+
 
 }
 
