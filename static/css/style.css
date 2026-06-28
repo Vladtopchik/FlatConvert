@@ -336,6 +336,23 @@ nav {
     }
 }
 
+.sing-in-button {
+    position: relative;
+    flex-shrink: 0;
+    padding: 0.4rem;
+    font-size: 1rem;
+    background: var(--primary-color-700);
+    border: 0.07rem solid var(--primary-color-800);
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: background-color .3s;
+
+    &:hover {
+        border: 0.07rem solid var(--primary-color-700);
+        background: var(--primary-color-600);
+    }
+}
+
 main {
     position: relative;
     margin-top: 5.5rem;
