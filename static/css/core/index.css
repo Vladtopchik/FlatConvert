@@ -2,6 +2,10 @@ main > section {
     margin-block: 2rem;
 }
 
+body {
+    background: var(--background-color-700);
+}
+
 .about {
     position: relative;
     padding: 0.5rem 3rem;
@@ -18,23 +22,28 @@ main > section {
     overflow: hidden;
     user-select: none;
     pointer-events: none;
+    z-index: -1;
+    background: var(--background-color-500);
 }
 
 .about-animation {
     position: relative;
     width: auto;
     height: 100%;
-    z-index: -1;
     aspect-ratio: 1.13/1;
+
+    svg {
+        height: 100%;
+        width: 100%;
+
+        path, use {
+            fill: var(--primary-color-300);
+        }
+    }
 }
 
-.about-animation > svg > g > g > g > g > g > g > g:nth-child(1):not(:only-child) {
-    display: none;
-}
-
-.about-animation path {
-    fill: var(--primary-color-400);
-    stroke: var(--primary-color-400);
+.about-animation.about-animation-svg svg g {
+    animation: files 5s infinite linear;
 }
 
 .about-service {
@@ -117,9 +126,171 @@ main > section {
     font-size: clamp(0.8rem, 1vw, 1rem);
 }
 
+.about-more-section {
+    position: relative;
+    z-index: 1;
+}
+
+.about-learn-more-button {
+    position: relative;
+    background: var(--primary-color-500);
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    font-size: 1.25rem;
+    transition: background-color .3s;
+    border: 0.15rem solid var(--primary-color-600);
+
+    &:hover {
+        background: var(--primary-color-600);
+    }
+
+    > span {
+        display: inline-block;
+        font-size: 1.3rem;
+        margin-left: 0.3rem;
+        transform: rotate(270deg);
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        display: block;
+        height: 100%;
+        width: 2rem;
+        top: 0;
+        left: 95%;
+    }
+}
+
+.about-learn-more-button:hover + .about-learn-more-menu,
+.about-learn-more-menu:hover {
+    scale: 1;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.about-learn-more-menu {
+    position: absolute;
+    list-style: none;
+    top: 50%;
+    left: 11.5rem;
+    padding: 0;
+    margin: 0;
+    border: 0.15rem solid var(--primary-color-600);
+    border-radius: 0.3rem;
+    background: var(--primary-color-500);
+    width: max-content;
+    transform-origin: left;
+    translate: 0 -50%;
+    scale: 0.7;
+    opacity: 0;
+    transition: opacity .2s, scale .2s;
+    pointer-events: none;
+    font-size: 1.3rem;
+}
+
+.about-learn-more-menu li {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+        background: var(--primary-color-550);
+    }
+
+    &:first-child {
+        border-top-right-radius: 0.15rem;
+        border-top-left-radius: 0.15rem;
+    }
+
+    &:last-child {
+        border-bottom-right-radius: 0.15rem;
+        border-bottom-left-radius: 0.15rem;
+    }
+
+}
+
+.about-learn-more-menu li + li {
+    border-top: 0.15rem solid var(--primary-color-600);
+}
+
+
 .why-us {
     position: relative;
     background: var(--background-color-700);
     text-align: center;
     padding: 1rem;
+}
+
+.why-us-title {}
+
+.why-us-subtitle {
+    font-size: 1.15rem;
+}
+
+.why-us-advantages {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding: 0.5rem;
+}
+
+.why-us-advantages-card {
+    text-align: left;
+    background: var(--background-color-500);
+    padding: 1rem;
+    border-radius: 0.7rem;
+}
+
+.why-us-advantages-card-icon {
+    font-family: 'Icons', sans-serif;
+    font-size: 1.5rem;
+    color: var(--primary-color-500);
+}
+
+.statistics {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    text-align: center;
+    background: var(--primary-color-500);
+    padding-block: 2rem;
+    margin: 0;
+}
+
+.statistics-card-title {
+    font-size: 2.5rem;
+    margin-block: 1rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.statistics-card-subtitle {
+    font-size: 0.9rem;
+    color: var(--primary-color-800);
+}
+
+.animation-hidden {
+    opacity: 0;
+    transform: translateY(3rem);
+}
+
+.appear-animation, .number-animation {
+        transition: opacity .3s, transform .3s;
+}
+
+@keyframes files {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-100%, -100%);
+    }
 }

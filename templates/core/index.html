@@ -6,7 +6,7 @@
 
 {% block main %}
     <section class="about">
-        <div class="about-service"><span class="icon">&#xe001;</span><span>{{ _("Service trusted by thousands") }}</span></div>
+        <div class="about-service"><span class="icon">&#xe001;</span><span>{{ _("A service trusted by thousands") }}</span></div>
         <div class="about-service-sections">
             <div class="about-first-section">
                 <p class="about-title">{{ _("We make working with files easy for everyone") }}</p>
@@ -18,7 +18,7 @@
                     empower you to create organized archives and make animations, providing a
                     reliable environment for all your needs.") }}</p>
             </div>
-            <div class="about-second-section">
+            <div class="about-second-section appear-animation">
                 <div class="about-second-section-info">
                     <div class="about-second-section-info-icon">&#xe003;</div>
                     <div class="about-second-section-info-content">
@@ -48,22 +48,61 @@
                 </div>
             </div>
         </div>
-        <div id="animation-container" class="about-animation-container">
-            <div id="animation-first-element" class="about-animation"></div>
+        <div class="about-more-section">
+            <button class="about-learn-more-button" type="button">{{ _("Learn more") }} <span class="icon">&#xe000;</span></button>
+            <ul class="about-learn-more-menu">
+                <li>{{ _("Capabilities") }}</li>
+                <li>{{ _("How it works") }}</li>
+            </ul>
+        </div>
+        <div id="about-animation-container" class="about-animation-container">
+            <div id="animation-first-element" class="about-animation about-animation-svg">{{ load_svg("core/files.svg") }}</div>
         </div>
     </section>
     <section class="why-us">
         <h1 class="why-us-title">Why us</h1>
         <p class="why-us-subtitle">Everything you need for convenient work with files, in one place</p>
+        <div class="why-us-advantages">
+            <div class="why-us-advantages-card appear-animation">
+                <div class="why-us-advantages-card-icon">&#xe006;</div>
+                <h3 class="why-us-advantages-title">{{ _("High Speed") }}</h3>
+                <p class="why-us-advantages-description">{{ _("Forget about waiting. Our algorithm is optimized to
+                    convert your files in seconds") }}</p>
+            </div>
+            <div class="why-us-advantages-card appear-animation">
+                <div class="why-us-advantages-card-icon">&#xe007;</div>
+                <h3 class="why-us-advantages-title">{{ _("Without Installation") }}</h3>
+                <p class="why-us-advantages-description">{{ _("Works directly in the browser on any device") }}</p>
+            </div>
+            <div class="why-us-advantages-card appear-animation">
+                <div class="why-us-advantages-card-icon">&#xe004;</div>
+                <h3 class="why-us-advantages-title">{{ _("24/7 Support") }}</h3>
+                <p class="why-us-advantages-description">{{ _("Our team is always ready to help with any questions
+                    and problems") }}</p>
+            </div>
+        </div>
+    </section>
+    <section class="statistics">
+        <div class="statistics-card">
+            <h3 class="statistics-card-title number-animation" data-number="50" data-postfix="K+">50K+</h3>
+            <p class="statistics-card-subtitle">{{ _("Users") }}</p>
+        </div>
+        <div class="statistics-card">
+            <h3 class="statistics-card-title number-animation" data-number="450" data-postfix="K+">450K+</h3>
+            <p class="statistics-card-subtitle">{{ _("Files processed") }}</p>
+        </div>
+        <div class="statistics-card">
+            <h3 class="statistics-card-title number-animation" data-number="70" data-postfix="+">70+</h3>
+            <p class="statistics-card-subtitle">{{ _("File formats") }}</p>
+        </div>
+        <div class="statistics-card">
+            <h3 class="statistics-card-title number-animation" data-number="25" data-postfix="+">25+</h3>
+            <p class="statistics-card-subtitle">{{ _("Additional tools for file processing") }}</p>
+        </div>
     </section>
 {% endblock %}
 
 {% block script %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
-
-    <script>
-        const aboutAnimationPath = {{ static("animations/file-types-animation.json") | tojson }};
-    </script>
-
     <script src="{{ js('core/index.js') }}"></script>
+    <script src="{{ js('core/animation.js') }}"></script>
 {% endblock %}
